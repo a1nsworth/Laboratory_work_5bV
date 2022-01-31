@@ -1,0 +1,8 @@
+//
+// Created by yaxbi on 31.01.2022.
+//
+
+#ifndef LABORATORY_WORK_5BV_VECTOR_H
+#define LABORATORY_WORK_5BV_VECTOR_H
+
+#endif //LABORATORY_WORK_5BV_VECTOR_H
