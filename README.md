@@ -16,5 +16,6 @@
 + Ссылка на открытый репозиторий:white_check_mark:
 + История коммитов:white_check_mark:
 ---
-Сведения:
-* В файле tests.с - содержатся тесты к функциям.
+Сведения:clipboard::
+* В файле :open_file_folder: tests_vector.с - содержатся тесты к функциям к vector.
+* В файле :open_file_folder: tests_vectorVoid.с - содержатся тесты к функциям к vectorVoid.
