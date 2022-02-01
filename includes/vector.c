@@ -106,7 +106,7 @@ void popBack(vector *v) {
 /// \param index - индекс
 /// \return Возвращает указатель на index-ый элемент вектора
 int *atVector(const vector v, const size_t index) {
-    assert(index < v.size);
+    assert(index < v.capacity);
 
     int *pIndex = &(v.data[index]);
     return pIndex;

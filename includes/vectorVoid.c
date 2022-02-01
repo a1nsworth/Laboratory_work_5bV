@@ -72,7 +72,7 @@ bool isFullV(const vectorVoid v) {
 /// \param indexElement - индекс получаемого элемента
 /// \param destination - нетипизированный указатель на ячейку памяти, для записи
 void getVectorValueV(const vectorVoid v, const size_t indexElement, void *destination) {
-    assert(indexElement < v.size);
+    assert(indexElement < v.capacity);
 
     char *sourse = (char *) v.data + indexElement * v.baseTypeSize;
     memcpy(destination, sourse, v.baseTypeSize);
