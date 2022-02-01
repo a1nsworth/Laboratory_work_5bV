@@ -20,7 +20,7 @@ void clear(vector *v);
 
 void shrinkToFit(vector *v);
 
-void deleteVector(vector *v);
+void deleteVector(vector v);
 
 bool isEmpty(vector v);
 

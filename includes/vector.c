@@ -25,11 +25,12 @@ void reserve(vector *v, const size_t newCapacity) {
         v->size = newCapacity;
     else {
         v->data = realloc(v->data, newCapacity * sizeof(int));
-        v->capacity = newCapacity;
         if (v->data == NULL) {
             fprintf(stderr, "bad alloc");
             exit(1);
         }
+
+        v->capacity = newCapacity;
     }
 }
 
@@ -47,8 +48,8 @@ void shrinkToFit(vector *v) {
 
 /// Освобождение памяти выделенную под вектор
 /// \param v - адрес ячейки памяти вектора
-void deleteVector(vector *v) {
-    free(v->data);
+void deleteVector(const vector v) {
+    free(v.data);
 }
 
 /// Проверка на пустоту
@@ -70,7 +71,8 @@ bool isFull(const vector v) {
 /// \param indexElement - индекс запрашиваемого элемента
 /// \return Возвращает элемент вектора под индексом indexElement
 int getVectorValue(const vector v, const size_t indexElement) {
-    assert(indexElement < v.capacity);
+    assert(indexElement < v.size);
+
     return v.data[indexElement];
 }
 
@@ -84,7 +86,7 @@ void pushBack(vector *v, const int x) {
         reserve(v, v->capacity * 2);
 
     v->data[v->size] = x;
-    v->size++;
+    (v->size)++;
 }
 
 /// Удаляет последний элемент вектора
@@ -93,8 +95,10 @@ void popBack(vector *v) {
     if (v->size == 0) {
         fprintf(stderr, "empty vector");
         exit(1);
-    } else
-        v->size--;
+    } else {
+        (v->size)--;
+        shrinkToFit(v);
+    }
 }
 
 /// Получение указателя элемента под индексом index
