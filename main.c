@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "includes/vector.h"
+#include "includes/vectorVoid.h"
 
 int main() {
-    vector v = createVector(SIZE_MAX);
+    vectorVoid a;
 
     return 0;
 }
