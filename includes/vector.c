@@ -96,3 +96,34 @@ void popBack(vector *v) {
     } else
         v->size--;
 }
+
+/// Получение указателя элемента под индексом index
+/// \param v - вектор
+/// \param index - индекс
+/// \return Возвращает указатель на index-ый элемент вектора
+int *atVector(const vector v, const size_t index) {
+    assert(index < v.size);
+
+    int *pIndex = &(v.data[index]);
+    return pIndex;
+}
+
+/// Получение указателя на последний элемент вектора
+/// \param v - вектор
+/// \return Возвращает указатель на последний элемент вектора
+int *back(const vector v) {
+    assert(v.size != 0);
+
+    int *pBack = &(v.data[v.size - 1]);
+    return pBack;
+}
+
+/// Получение указателя на первый элемент вектора
+/// \param v - вектор
+/// \return Возвращает указатель на первый элемент вектора
+int *front(const vector v) {
+    assert(v.size != 0);
+
+    int *pFront = &(v.data[0]);
+    return pFront;
+}
