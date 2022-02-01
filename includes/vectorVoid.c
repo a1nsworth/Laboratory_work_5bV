@@ -38,7 +38,8 @@ void reserveV(vectorVoid *v, const size_t newCapacity) {
 /// Освобождает память выделенную под неиспользуемые эдементы
 /// \param v - адрес ячейки памяти вектора
 void shrinkToFitV(vectorVoid *v) {
-    reserveV(v, v->size);
+    if (v->size != 0)
+        reserveV(v, v->size);
 }
 
 /// Удаление элементов вектора
