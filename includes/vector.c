@@ -43,7 +43,8 @@ void clear(vector *v) {
 /// Освобождает память выделенную под неиспользуемые эдементы
 /// \param v - адрес ячейки памяти вектора
 void shrinkToFit(vector *v) {
-    reserve(v, v->size);
+    if (v->size != 0)
+        reserve(v, v->size);
 }
 
 /// Освобождение памяти выделенную под вектор
