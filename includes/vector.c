@@ -47,7 +47,7 @@ void shrinkToFit(vector *v) {
 }
 
 /// Освобождение памяти выделенную под вектор
-/// \param v - адрес ячейки памяти вектора
+/// \param v - вектор
 void deleteVector(const vector v) {
     free(v.data);
 }
